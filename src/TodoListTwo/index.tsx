@@ -5,6 +5,7 @@ interface SentValue {
 }
 interface List {
   list: (string | number)[];
+  deleteRow: (i: number) => void;
 }
 // 接口首字母大写
 const Top = ({ saveValue }: SentValue) => {
@@ -20,12 +21,17 @@ const Top = ({ saveValue }: SentValue) => {
     </div>
   );
 };
-const List = ({ list }: List) => {
+const List = ({ list, deleteRow }: List) => {
   return (
     <div>
       <ul>
         {list.map((i, e) => {
-          return <li key={e}>{i}</li>;
+          return (
+            <li key={e}>
+              {i}
+              <Button onClick={() => deleteRow(e)}>删除</Button>
+            </li>
+          );
         })}
       </ul>
     </div>
@@ -36,10 +42,14 @@ const TodoListTwo = () => {
   const saveValue = (i: number | string) => {
     setList([...list, i]);
   };
+  const delValue = (i: number) => {
+    console.log(i);
+    setList(list.filter((e, index) => index !== i));
+  };
   return (
     <div>
       <Top saveValue={saveValue} />
-      <List list={list} />
+      <List list={list} deleteRow={delValue} />
     </div>
   );
 };
