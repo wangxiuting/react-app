@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { Button, Input } from "antd";
+import Reducer from "./Store/reducer";
+const CreateContext = createContext<any>({})
+const { store, dispatchStore } = Reducer()
 interface SentValue {
   saveValue: (i: string | number) => void;
 }
@@ -43,14 +46,13 @@ const TodoListTwo = () => {
     setList([...list, i]);
   };
   const delValue = (i: number) => {
-    console.log(i);
     setList(list.filter((e, index) => index !== i));
   };
   return (
-    <div>
+    <CreateContext.Provider value={{ store, dispatchStore }}>
       <Top saveValue={saveValue} />
       <List list={list} deleteRow={delValue} />
-    </div>
+    </CreateContext.Provider>
   );
 };
 export default TodoListTwo;

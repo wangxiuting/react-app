@@ -3432,7 +3432,7 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.20.0:
+commander@^2.20.0, commander@^2.9.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -11044,6 +11044,13 @@ tr46@^2.0.2:
   integrity sha512-3n1qG+/5kg+jrbTzwAykB5yRYtQCTqOGKq5U5PE3b0a1/mzo6snDhjGS0zJVJunO0NrT3Dg1MLy5TjWP/UJppg==
   dependencies:
     punycode "^2.1.1"
+
+treer@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npm.taobao.org/treer/download/treer-1.0.4.tgz#3b5ff47baec11c97476b8b7712da71cf459d52a3"
+  integrity sha1-O1/0e67BHJdHa4t3Etpxz0WdUqM=
+  dependencies:
+    commander "^2.9.0"
 
 tryer@^1.0.1:
   version "1.0.1"
