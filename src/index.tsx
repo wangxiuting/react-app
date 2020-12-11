@@ -1,4 +1,5 @@
 import React from "react";
+import store from "./Counter/Store/store";
 import ReactDOM from "react-dom";
-import TodoThree from "./TodoThree";
-ReactDOM.render(<TodoThree />, document.getElementById("root"));
+import Counter from "./Counter";
+ReactDOM.render(<Counter />, document.getElementById("root"));
